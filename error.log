@@ -1,0 +1,21 @@
+networkInterfaces:
+    - network: projects/{{ env["project"] }}/global/networks/{{ properties["vpc"] }}
+      subnetwork: projects/{{ env["project"] }}/regions/{{ region }}/subnetworks/{{ properties["subnetwork"] }}
+      accessConfigs:
+      - name: external-nat
+        networkTier: STANDARD
+
+- email: kyvos-serviceaccount-m@kyvos-qa.iam.gserviceaccount.com
+      scopes:
+      - "https://www.googleapis.com/auth/cloud-platform"
+
+
+
+disks:
+    - deviceName: boot
+      autoDelete: true
+      type: PERSISTENT
+      boot: true
+      initializeParams:
+      -  disksizeGb: 20
+         sourceImage: projects/centos-cloud/global/images/centos-7-v2022051
