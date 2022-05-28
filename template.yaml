@@ -5,8 +5,8 @@ resources:
 - name: template
   type: template.jinja
   properties:
-    vpc: kyvos-qa-vpc
-    subnetwork: kyvos-qa-subnet
-    zone: us-central1-a
-    webserverCount: 2
-    webserverMachineType: e2-medium
+    vpc:
+    subnetwork:
+    zone:
+    webserverCount:
+    webserverMachineType:
